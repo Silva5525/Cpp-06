@@ -6,7 +6,7 @@
 /*   By: wdegraf <wdegraf@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 14:38:26 by wdegraf           #+#    #+#             */
-/*   Updated: 2024/12/07 18:40:22 by wdegraf          ###   ########.fr       */
+/*   Updated: 2024/12/07 18:52:09 by wdegraf          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static bool mashupLiteral(const std::string& str)
 /// @brief converts a string to a scalar value in the 4 formats: char, int, float, double.
 /// @param str to convert.
 /// New in C++;
-/// @fn std::fixed sets the format of floating-point output to fixed notation.
+/// @fn std::fixed sets the format of floating-point output to fixed Notation.
 /// @fn std::setprecision() sets the decimal precision to be used to 
 /// format floating-point values on output operations (if 1 -> 1 decimal = 4,22 -> 4,2).
 /// @fn isprint() checks if a character is printable.
@@ -78,7 +78,7 @@ static bool mashupLiteral(const std::string& str)
 /// @fn std::stod() (s to d) converts a string or substr to a double.
 /// @fn str.find() returns the position of the first occurrence of a substring.
 /// @fn std::string::npos is a static member constant value with the greatest possible value
-/// for an element of type size_t. (indicates no matches found)
+/// for an element of type size_t. (indicates No matches found)
 /// @fn std::invalid_argument is a standard exception class that is thrown when an argument
 /// with invalid value like "abc".
 /// @fn std::out_of_range is a standard exception class that is thrown when an argument
@@ -101,9 +101,9 @@ void ScalarConverter::convert(const std::string& str)
 	{
 		std::string sign = (str[0] == '-') ? "-" : "+";
 		if (str == "nan" || str == "nanf")
-			std::cout << "char: No. int: No. float: nanf. double: nan.\n";
+			std::cout << "char: impossible. int: impossible. float: nanf. double: nan.\n";
 		else
-			std::cout << "char: No. int: No. float: "
+			std::cout << "char: impossible. int: impossible. float: "
 					<< sign << "inff double: " << sign << "inf\n";
 		return ;
 	}
@@ -117,7 +117,7 @@ void ScalarConverter::convert(const std::string& str)
 		if (isprint(i) && (str.find('.') == std::string::npos))
 			std::cout << "'" << static_cast<char>(i) << "'. ";
 		else
-			std::cout << "No. ";
+			std::cout << "impossible. ";
 		std::cout << "int: " << i << ". "
 				<< "float: " << std::stof(str) << "f. "
 				<< "double: " << std::stod(str) << ". \n";
@@ -132,8 +132,8 @@ void ScalarConverter::convert(const std::string& str)
 		    std::cerr << "Out of range: '" << str << "' is too long.\n";
 	}
 
-	std::cout << "char: No. "
-			<< "int: No. "
-			<< "float: No. "
-			<< "double: No. \n";
+	std::cout << "char: impossible. "
+			<< "int: impossible. "
+			<< "float: impossible. "
+			<< "double: impossible. \n";
 }
